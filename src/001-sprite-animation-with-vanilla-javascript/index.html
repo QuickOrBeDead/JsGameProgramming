@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprite Animation</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="controls">
+        <label for="selectAnimation">Choose Animation:</label>
+        <select id="selectAnimation">
+            <option value="idle">Idle</option>
+            <option value="walk">Walk</option>
+            <option value="attack">Attack</option>
+            <option value="attackBlocked">Attack Blocked</option>
+            <option value="shield">Shield</option>
+            <option value="takeHit">Take Hit</option>
+            <option value="death">Death</option>
+        </select>
+    </div>
+    
+    <canvas id="canvas"></canvas>
+
+    <script src="spriteAnimations.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
