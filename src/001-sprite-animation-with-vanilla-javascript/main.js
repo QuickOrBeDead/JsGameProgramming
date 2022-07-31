@@ -26,7 +26,8 @@ const animations = SpriteAnimations.create({
         { 
             name: "death",
             row: 1,
-            frames: 4
+            frames: 4,
+            repeat: 1
         },
         { 
             name: "idle",
@@ -44,9 +45,15 @@ const animations = SpriteAnimations.create({
             frames: 4
         },
         { 
-            name: "walk",
+            name: "walkRight",
             row: 5,
             frames: 4
+        },
+        { 
+            name: "walkLeft",
+            row: 5,
+            frames: 4,
+            flip: true
         }
     ]
 });
@@ -60,8 +67,11 @@ let animationFrame = 0;
 
 function animate() {
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+
+    ctx.save();
     ctx.fillStyle = "#C0C0C0";
     ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    ctx.restore();
 
     animations.draw(ctx);
 
