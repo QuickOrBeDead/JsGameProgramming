@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sprite Animations</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="controls">
+        <label for="selectAnimation">Choose Animation:</label>
+        <select id="selectAnimation">
+            <option value="idle">Idle</option>
+            <option value="walk">Walk Right</option>
+            <option value="walk-1">Walk Left</option>
+            <option value="attack">Attack</option>
+            <option value="attackBlocked">Attack Blocked</option>
+            <option value="shield">Shield</option>
+            <option value="takeHit">Take Hit</option>
+            <option value="death">Death</option>
+        </select>
+    </div>
+    <div id="game"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
