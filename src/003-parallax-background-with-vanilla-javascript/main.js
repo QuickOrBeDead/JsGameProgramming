@@ -24,10 +24,16 @@ class ParallaxImage {
     }
 
     draw(ctx) {
-        ctx.drawImage(this.image, 0, 0, this.width, this.height, this.x, this.y, this.width, this.height);
+        if (this.x <= 0) {
+            ctx.drawImage(this.image, Math.abs(this.x), 0, this.width + this.x, this.height, 0, this.y, this.width + this.x, this.height);
+        } else {
+            ctx.drawImage(this.image, 0, 0, this.width - this.x, this.height, this.x, this.y, this.width - this.x, this.height);
+        }
 
-        if (this.speed) {
-            ctx.drawImage(this.image, 0, 0, Math.abs(this.x), this.height, this.x - (this.direction * this.width), this.y, Math.abs(this.x), this.height);
+        if (this.x <= 0) {
+            ctx.drawImage(this.image, 0, 0, Math.abs(this.x), this.height, this.width + this.x, this.y, Math.abs(this.x), this.height);
+        } else {
+            ctx.drawImage(this.image, this.width - this.x, 0, this.x, this.height, 0, this.y, this.x, this.height);
         }
     }
 }
