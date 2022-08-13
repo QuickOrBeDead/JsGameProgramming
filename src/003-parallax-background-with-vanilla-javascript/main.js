@@ -38,18 +38,13 @@ class ParallaxImage {
     }
 }
 
-function createImage(path) {
-    const image = new Image();
-    image.src = path;
-    return image;    
-}
-
+const loader = new Loader(ctx, animate);
 const direction = -1;
 const images = [
-    new ParallaxImage(createImage("assets/bg.png"), 0, 0, 272, 160, 0, direction),
-    new ParallaxImage(createImage("assets/far-buildings.png"), 0, 18, 272, 142, 1, direction),
-    new ParallaxImage(createImage("assets/buildings.png"), 0, 10, 272, 150, 2, direction),
-    new ParallaxImage(createImage("assets/skill-foreground.png"), 0, 56, 272, 104, 4, direction)
+    new ParallaxImage(loader.loadImage("assets/bg.png"), 0, 0, 272, 160, 0, direction),
+    new ParallaxImage(loader.loadImage("assets/far-buildings.png"), 0, 18, 272, 142, 1, direction),
+    new ParallaxImage(loader.loadImage("assets/buildings.png"), 0, 10, 272, 150, 2, direction),
+    new ParallaxImage(loader.loadImage("assets/skill-foreground.png"), 0, 56, 272, 104, 4, direction)
 ];
 
 const frameRate = 5;
@@ -68,5 +63,3 @@ function animate() {
 
     frameCounter++;
 }
-
-animate();
