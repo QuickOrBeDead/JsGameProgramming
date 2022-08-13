@@ -8,11 +8,8 @@ class Skeleton {
         this.attacking = false;
         this.blockCounter = 0;
 
-        const skeletonImage = new Image();
-        skeletonImage.src = "./assets/skeleton.png";
-
         this.animations = SpriteAnimations.create({
-            img: skeletonImage,
+            img: loader.loadImage("./assets/skeleton.png"),
             defaultState: this.left ? "idleLeft" : "idleRight",
             spriteWidth: 150,
             spriteHeight: 150,

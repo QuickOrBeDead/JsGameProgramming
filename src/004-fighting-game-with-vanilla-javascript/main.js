@@ -4,6 +4,7 @@ const ctx = canvas.getContext("2d");
 const CANVAS_WIDTH = canvas.width = 272;
 const CANVAS_HEIGHT = canvas.height = 160;
 
+const loader = new Loader(ctx, animate);
 const background = new Background(0);
 const player = new Skeleton(0, 58, 0);
 const enemy = new Skeleton(120, 58, 0, true);
@@ -81,5 +82,3 @@ function animate() {
 
     frameCounter++;
 }
-
-animate();

@@ -43,20 +43,14 @@ class ParallaxImage {
     }
 }
 
-function createImage(path) {
-    const image = new Image();
-    image.src = path;
-    return image;    
-}
-
 class Background {
     constructor(direction) {
         this.direction = direction === undefined ? -1 : direction ? 1 : -1;
         this.images = [
-            new ParallaxImage(createImage("assets/bg.png"), 0, 0, 272, 160, 0, direction, 0.8),
-            new ParallaxImage(createImage("assets/far-buildings.png"), 0, 18, 272, 142, 1, direction, 0.9),
-            new ParallaxImage(createImage("assets/buildings.png"), 0, 10, 272, 150, 2, direction, 0.8),
-            new ParallaxImage(createImage("assets/skill-foreground.png"), 0, 56, 272, 104, 4, direction, 0.9)
+            new ParallaxImage(loader.loadImage("assets/bg.png"), 0, 0, 272, 160, 0, direction, 0.8),
+            new ParallaxImage(loader.loadImage("assets/far-buildings.png"), 0, 18, 272, 142, 1, direction, 0.9),
+            new ParallaxImage(loader.loadImage("assets/buildings.png"), 0, 10, 272, 150, 2, direction, 0.8),
+            new ParallaxImage(loader.loadImage("assets/skill-foreground.png"), 0, 56, 272, 104, 4, direction, 0.9)
         ];
     }
 
