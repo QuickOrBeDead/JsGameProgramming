@@ -4,11 +4,9 @@ const ctx = canvas.getContext("2d");
 const CANVAS_WIDTH = canvas.width = 150;
 const CANVAS_HEIGHT = canvas.height = 150;
 
-const skeletonImage = new Image();
-skeletonImage.src = "./assets/skeleton.png";
-
+const loader = new Loader(ctx, animate);
 const animations = SpriteAnimations.create({
-    img: skeletonImage,
+    img: loader.loadImage("./assets/skeleton.png"),
     defaultState: "idle",
     spriteWidth: 150,
     spriteHeight: 150,
@@ -82,5 +80,3 @@ function animate() {
     animationFrame++;
     requestAnimationFrame(animate);
 }
-
-animate();
